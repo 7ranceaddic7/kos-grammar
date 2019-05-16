@@ -350,7 +350,7 @@
       ]
     },
     "return-bare": {
-      "begin": "(?i)(?<![_[:alnum:]\\:])(return)\\s*(\\.)",
+      "match": "(?i)(?<![_[:alnum:]\\:])(return)\\s*(\\.)",
       "captures": {
         "1": {
           "name": "keyword.control.flow.kos"
