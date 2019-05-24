@@ -1026,7 +1026,7 @@
     },
     "function-call": {
       "name": "meta.functioncall.kos",
-      "begin": "(\\:)?([_[:alpha:]][_[:alnum:]]*)\\s*(\\()",
+      "begin": "(?<!\\.)(\\:)?([_[:alpha:]][_[:alnum:]]*)\\s*(\\()",
       "beginCaptures": {
         "1": {
           "name": "punctuation.accessor.block.kos"
