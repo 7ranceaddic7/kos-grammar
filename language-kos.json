@@ -66,7 +66,7 @@
           "include": "#variable-declaration"
         },
         {
-          "include": "#statement"
+          "include": "#instruction"
         }
       ]
     },
@@ -401,52 +401,52 @@
         }
       ]
     },
-    "statement": {
+    "instruction": {
       "patterns": [
         {
-          "include": "#set-statement"
+          "include": "#set-instruction"
         },
         {
-          "include": "#unassign-statement"
+          "include": "#unassign-instruction"
         },
         {
-          "include": "#print-statement"
+          "include": "#print-instruction"
         },
         {
-          "include": "#copy-statement"
+          "include": "#copy-instruction"
         },
         {
-          "include": "#rename-statement"
+          "include": "#rename-instruction"
         },
         {
-          "include": "#switch-statement"
+          "include": "#switch-instruction"
         },
         {
-          "include": "#delete-statement"
+          "include": "#delete-instruction"
         },
         {
-          "include": "#compile-statement"
+          "include": "#compile-instruction"
         },
         {
-          "include": "#log-statement"
+          "include": "#log-instruction"
         },
         {
-          "include": "#run-statement"
+          "include": "#run-instruction"
         },
         {
-          "include": "#run-path-statement"
+          "include": "#run-path-instruction"
         },
         {
-          "include": "#run-path-once-statement"
+          "include": "#run-path-once-instruction"
         },
         {
-          "include": "#list-statement"
+          "include": "#list-instruction"
         },
         {
-          "include": "#command-statements"
+          "include": "#command-instructions"
         },
         {
-          "include": "#node-statements"
+          "include": "#node-instructions"
         },
         {
           "include": "#block"
@@ -459,7 +459,7 @@
         }
       ]
     },
-    "set-statement": {
+    "set-instruction": {
       "begin": "(?i)\\b(set)(?![_[:alnum:]\\:])",
       "beginCaptures": {
         "1": {
@@ -481,7 +481,7 @@
         }
       ]
     },
-    "unassign-statement": {
+    "unassign-instruction": {
       "name": "meta.unassignment.kos",
       "begin": "(?i)\\b(unset|unlock)(?![_[:alnum:]\\:])",
       "beginCaptures": {
@@ -505,7 +505,7 @@
         }
       ]
     },
-    "print-statement": {
+    "print-instruction": {
       "name": "meta.print.kos",
       "begin": "(?i)\\b(print)(?![_[:alnum:]\\:])",
       "beginCaptures": {
@@ -545,7 +545,7 @@
         }
       ]
     },
-    "copy-statement": {
+    "copy-instruction": {
       "name": "meta.copy.kos",
       "begin": "(?i)\\b(copy)(?![_[:alnum:]\\:])",
       "beginCaptures": {
@@ -568,7 +568,7 @@
         }
       ]
     },
-    "rename-statement": {
+    "rename-instruction": {
       "name": "meta.rename.kos",
       "begin": "(?i)\\b(rename)\\s+\\b(file|volume)\\s+",
       "beginCaptures": {
@@ -594,7 +594,7 @@
         }
       ]
     },
-    "switch-statement": {
+    "switch-instruction": {
       "name": "meta.switch.kos",
       "begin": "(?i)\\b(switch)\\s+\\b(to)(?![_[:alnum:]\\:])",
       "beginCaptures": {
@@ -617,7 +617,7 @@
         }
       ]
     },
-    "log-statement": {
+    "log-instruction": {
       "begin": "(?i)\\b(log)(?![_[:alnum:]\\:])",
       "beginCaptures": {
         "1": {
@@ -639,7 +639,7 @@
         }
       ]
     },
-    "delete-statement": {
+    "delete-instruction": {
       "name": "meta.delete.kos",
       "begin": "(?i)\\b(delete)(?![_[:alnum:]\\:])",
       "beginCaptures": {
@@ -662,7 +662,7 @@
         }
       ]
     },
-    "compile-statement": {
+    "compile-instruction": {
       "name": "meta.compile.kos",
       "begin": "(?i)\\b(compile)(?![_[:alnum:]\\:])",
       "beginCaptures": {
@@ -685,7 +685,7 @@
         }
       ]
     },
-    "run-statement": {
+    "run-instruction": {
       "name": "meta.run.kos",
       "begin": "(?i)\\b(run)\\s+(?:\\b(once)\\s+)?",
       "beginCaptures": {
@@ -707,7 +707,7 @@
           "include": "#call"
         },
         {
-          "include": "#run-on-statement"
+          "include": "#run-on-instruction"
         },
         {
           "include": "#string"
@@ -717,7 +717,7 @@
         }
       ]
     },
-    "run-on-statement": {
+    "run-on-instruction": {
       "begin": "(?i)\\b(on)(?![_[:alnum:]\\:])",
       "beginCaptures": {
         "1": {
@@ -731,7 +731,7 @@
         }
       ]
     },
-    "run-path-statement": {
+    "run-path-instruction": {
       "name": "meta.runpath.kos",
       "begin": "(?i)\\b(runpath)",
       "beginCaptures": {
@@ -751,7 +751,7 @@
         }
       ]
     },
-    "run-once-path-statement": {
+    "run-once-path-instruction": {
       "name": "meta.runoncepath.kos",
       "begin": "(?i)\\b(runoncepath)",
       "beginCaptures": {
@@ -771,7 +771,7 @@
         }
       ]
     },
-    "list-statement": {
+    "list-instruction": {
       "name": "meta.list.kos",
       "match": "(?i)\\b(list)(?:\\s+\\b([_[:alpha:]][_[:alnum:]]*))?(?:\\s+\\b(in)\\s+\\b([_[:alpha:]][_[:alnum:]]*))?(\\.)",
       "captures": {
@@ -792,7 +792,7 @@
         }
       }
     },
-    "command-statements": {
+    "command-instructions": {
       "patterns": [
         {
           "match": "(?i)\\b(clearscreen)(\\.)",
@@ -829,7 +829,7 @@
         }
       ]
     },
-    "node-statements": {
+    "node-instructions": {
       "patterns": [
         {
           "include": "#node-add"
@@ -927,7 +927,22 @@
           "include": "#block"
         },
         {
+          "include": "#ternary-keywords"
+        },
+        {
           "include": "#expression-operators"
+        }
+      ]
+    },
+    "ternary-keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.choose.kos",
+          "match": "(choose)(?![_[:alnum:]\\:])"
+        },
+        {
+          "name": "keyword.control.conditional.kos",
+          "match": "(if|else)(?![_[:alnum:]\\:])"
         }
       ]
     },
@@ -1026,7 +1041,7 @@
     },
     "function-call": {
       "name": "meta.functioncall.kos",
-      "begin": "(?<!\\.)(\\:)?([_[:alpha:]][_[:alnum:]]*)\\s*(\\()",
+      "begin": "(\\:)?([_[:alpha:]][_[:alnum:]]*)\\s*(\\()",
       "beginCaptures": {
         "1": {
           "name": "punctuation.accessor.block.kos"
