@@ -2,9 +2,7 @@
   "version": "",
   "name": "Kerbal Operating System",
   "scopeName": "source.kos",
-  "fileTypes": [
-    "ks"
-  ],
+  "fileTypes": ["ks"],
   "patterns": [
     {
       "include": "#statements"
@@ -323,7 +321,7 @@
     "return-statement": {
       "patterns": [
         {
-            "include": "#return-bare"
+          "include": "#return-bare"
         },
         {
           "include": "#return-value"
@@ -331,6 +329,7 @@
       ]
     },
     "return-value": {
+      "name": "meta.return.kos",
       "begin": "(?i)(?<![_[:alnum:]\\:])(return)\\s+",
       "beginCaptures": {
         "1": {
@@ -350,6 +349,7 @@
       ]
     },
     "return-bare": {
+      "name": "meta.return.kos",
       "match": "(?i)(?<![_[:alnum:]\\:])(return)\\s*(\\.)",
       "captures": {
         "1": {
@@ -483,7 +483,7 @@
     },
     "unassign-instruction": {
       "name": "meta.unassignment.kos",
-      "begin": "(?i)\\b(unset|unlock)(?![_[:alnum:]\\:])",
+      "begin": "(?i)(?<![_[:alnum:]\\:])(unset|unlock)\\s+",
       "beginCaptures": {
         "1": {
           "name": "keyword.assignment.unassign.kos"
@@ -498,10 +498,10 @@
       "patterns": [
         {
           "name": "keyword.other.unassign.all.kos",
-          "matches": "(?i)\\ball"
+          "match": "(?i)\\ball"
         },
         {
-          "includes": "#identifier"
+          "include": "#identifier"
         }
       ]
     },
