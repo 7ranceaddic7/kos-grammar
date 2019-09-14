@@ -437,7 +437,7 @@
           "include": "#run-path-instruction"
         },
         {
-          "include": "#run-path-once-instruction"
+          "include": "#run-once-path-instruction"
         },
         {
           "include": "#list-instruction"
@@ -756,7 +756,7 @@
       "begin": "(?i)\\b(runoncepath)",
       "beginCaptures": {
         "1": {
-          "name": "keyword.command.runpath.kos"
+          "name": "keyword.command.runoncepath.kos"
         }
       },
       "end": "\\.",
