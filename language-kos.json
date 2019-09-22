@@ -460,6 +460,7 @@
       ]
     },
     "set-instruction": {
+      "name": "meta.set.kos",
       "begin": "(?i)\\b(set)(?![_[:alnum:]\\:])",
       "beginCaptures": {
         "1": {
